@@ -1,8 +1,8 @@
 import sqlite3
-
+database = "test.db"
 def connect_to_database():
     try:
-        return sqlite3.connect('test.db')
+        return sqlite3.connect(database)
     except sqlite3.Error as e:
         print(f"Database error: {e}")
         return None
