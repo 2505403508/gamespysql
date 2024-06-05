@@ -45,8 +45,8 @@ def fetch_games_by_memory(user_memory):
 
 def print_games(data):
     if data:
-        print(" ______________________________________________________________")
-        print("| Game Name                      | Game Memory (GB) | Game Kind       |")
+        print(" ______________________________________________________________________")
+        print("| Game Name                      | Game Memory (GB)  | Game Kind       |")
         for row in data:
             print(f"| {row[0]:<30} | {row[1]:<17} | {row[2]:<15} |")
         print("|________________________________|___________________|_________________|")
