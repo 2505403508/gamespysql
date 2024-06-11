@@ -1,4 +1,5 @@
 import sqlite3
+
 database = "test.db"
 
 def connect_to_database():
@@ -42,6 +43,23 @@ def fetch_games_by_memory(user_memory):
         finally:
             db.close()
 
+def fetch_games_by_kind(kind_id):
+    db = connect_to_database()
+    if db:
+        cursor = db.cursor()
+        try:
+            cursor.execute("""
+                SELECT game.game_name, game.game_memory, kinds.kind_kind
+                FROM game
+                JOIN kinds ON game.game_kinds = kinds.kind_id
+                WHERE game.game_kinds = ?;
+            """, (kind_id,))
+            return cursor.fetchall()
+        except sqlite3.Error as e:
+            print(f"Error fetching data: {e}")
+        finally:
+            db.close()
+
 def print_games(data):
     if data:
         print(" ______________________________________________________________________")
@@ -53,7 +71,7 @@ def print_games(data):
         print("No data available.")
 
 while True:
-    user_input = input("\nWhat would you like to do?\n1. Print all games ordered by name\n2. Print all games ordered by kind\n3. Print all games ordered by memory\n4. Recommend games based on available memory\n5. Exit\n")
+    user_input = input("\nWhat would you like to do?\n1. Print all games ordered by name\n2. Print all games ordered by kind\n3. Print all games ordered by memory\n4. Recommend games based on available memory\n5. Recommend games based on preferred kind\n6. Exit\n")
     if user_input == '1':
         print_games(fetch_game_data('game_name'))
     elif user_input == '2':
@@ -67,6 +85,13 @@ while True:
         except ValueError:
             print("Invalid input. Please enter a numerical value for memory in GB.")
     elif user_input == '5':
+        print("1. Action\n2. Indie\n3. RPG\n4. Survival")
+        kind_choice = input("Enter the number corresponding to your preferred kind: ")
+        if kind_choice in ['1', '2', '3', '4']:
+            print_games(fetch_games_by_kind(kind_choice))
+        else:
+            print("Invalid input. Please enter a number between 1 and 4.")
+    elif user_input == '6':
         break
     else:
         print('That was not an option.\n')
