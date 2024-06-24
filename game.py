@@ -8,7 +8,7 @@ def connect_to_database():  # Function to connect to the SQLite database
         return sqlite3.connect(database)  # Try to connect to the database
     except sqlite3.Error as e:  # If there is an error
         print(f"Database error: {e}")  # Print the error
-        return None  # Return None if connection fails
+        return None  # Return None if connection fails 1
 
 def fetch_game_data(order_by):  # Function to fetch game data, ordered by a specified column
     db = connect_to_database()  # Connect to the database
