@@ -19,7 +19,7 @@ def fetch_game_data(order_by):
                 SELECT game.game_name, game.game_memory, kinds.kind_kind
                 FROM game
                 JOIN kinds ON game.game_kinds = kinds.kind_id
-                ORDER BY {order_by};  # Order the results by the specified column
+                ORDER BY {order_by};  
             """)
             return cursor.fetchall()  # Fetch all results from the query
         except sqlite3.Error as e:  # If there is an error in the query
@@ -36,7 +36,7 @@ def fetch_games_by_memory(user_memory):  # Function to fetch games by memory usa
                 SELECT game.game_name, game.game_memory, kinds.kind_kind
                 FROM game
                 JOIN kinds ON game.game_kinds = kinds.kind_id
-                WHERE game.game_memory <= ?;  # Only fetch games with memory less than or equal to user_memory
+                WHERE game.game_memory <= ?; 
             """, (user_memory,))
             return cursor.fetchall()  # Fetch all results from the query
         except sqlite3.Error as e:  # If there is an error in the query
@@ -53,7 +53,7 @@ def fetch_games_by_kind(kind_id):  # Function to fetch games by kind ID
                 SELECT game.game_name, game.game_memory, kinds.kind_kind
                 FROM game
                 JOIN kinds ON game.game_kinds = kinds.kind_id
-                WHERE game.game_kinds = ?;  # Only fetch games with the specified kind_id
+                WHERE game.game_kinds = ?;
             """, (kind_id,))
             return cursor.fetchall()  # Fetch all results from the query
         except sqlite3.Error as e:  # If there is an error in the query
