@@ -1,4 +1,4 @@
-#23552 Keith Guo
+#23552 Keith Guo 25/6/2024
 import sqlite3
 
 database = "test.db"  # Name of the database file
@@ -66,7 +66,7 @@ def print_games(data):  # Function to print game data
         print(" ______________________________________________________________________")
         print("| Game Name                      | Game Memory (GB)  | Game Kind       |")
         for row in data:  # Loop through each row of data
-            print(f"| {row[0]:<30} | {row[1]:<17} | {row[2]:<15} |")  # Print each column in the row
+            print(f"| {row[0]:<30} | {row[1]:<17} | {row[2]:<15} |") 
         print("|________________________________|___________________|_________________|")
     else:
         print("No data available.")  # If there is no data, print a message
