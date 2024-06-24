@@ -10,7 +10,7 @@ def connect_to_database():  # Function to connect to the SQLite database
         print(f"Database error: {e}")  # Print the error
         return None  # Return None if connection fails 1
 
-def fetch_game_data(order_by):  # Function to fetch game data, ordered by a specified column
+def fetch_game_data(order_by):
     db = connect_to_database()  # Connect to the database
     if db:
         cursor = db.cursor()  # Create a cursor object
