@@ -28,7 +28,7 @@ def fetch_game_data(order_by):
             db.close()  # Close the database connection
 
 def fetch_games_by_memory(user_memory):  # Function to fetch games by memory usage
-    db = connect_to_database()  # Connect to the database
+    db = connect_to_database()
     if db:
         cursor = db.cursor()  # Create a cursor object
         try:
