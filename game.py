@@ -89,10 +89,10 @@ while True:  # Infinite loop to keep the program running until the user decides 
         print("1. Action\n2. Indie\n3. RPG\n4. Survival")  # Display kind options
         kind_choice = input("Enter the number corresponding to your preferred kind: ")
         if kind_choice in ['1', '2', '3', '4']:
-            print_games(fetch_games_by_kind(kind_choice))  # Recommend games based on preferred kind
+            print_games(fetch_games_by_kind(kind_choice))
         else:
             print("Invalid input. Please enter a number between 1 and 4.")  # Handle invalid input
     elif user_input == '6':
         break  # Exit the program
     else:
-        print('That was not an option.\n')  # Handle invalid menu option
+        print('That was not an option.\n')
