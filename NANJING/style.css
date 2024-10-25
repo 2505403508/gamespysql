@@ -1,48 +1,67 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f9f9f9;
+* {
+    font-family: 'Times New Roman', Times, serif;
 }
 
-header {
-    background-color: #444;
-    color: #fff;
-    padding: 1rem;
+p {
+    font-size: 23px;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+img {
+    width: 100%;
+}
+
+.hero-image {
+    background-image: url("./images/nanjing-cityscape.jpg");
+    height: 330px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    top: -170px;
+    position: absolute;
+    color: whitesmoke;
+    font-size: 200px;
     text-align: center;
+    width: 100%;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
+.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 33px;
+    width: 80%;
+    margin: auto;
+    margin-top: -60px;
+}
+
+.button {
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 40px;
+    border: none;
+    background-color: rgb(33, 33, 33);
+    color: rgb(245, 245, 245);
+    padding: 30px 64px;
     text-align: center;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-main {
-    padding: 2rem;
-    text-align: center;
-}
-
-.gallery {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem;
-}
-
-.gallery img {
-    width: 30%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
     cursor: pointer;
-}
-
-footer {
-    background-color: #444;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
 }
