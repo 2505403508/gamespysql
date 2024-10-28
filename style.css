@@ -12,6 +12,7 @@ h1 {
 
 img {
     width: 100%;
+    height: auto; /* Ensure images maintain their aspect ratio */
 }
 
 .hero-image {
@@ -33,9 +34,9 @@ img {
 }
 
 .images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex; /* Changed to flex for better alignment */
+    justify-content: space-around; /* Space images evenly */
+    gap: 20px; /* Added gap between images */
     width: 80%;
     height: 100%;
     margin: auto;
@@ -44,11 +45,10 @@ img {
 
 .infos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 33px;
+    grid-template-columns: repeat(3, 1fr); /* Updated for three columns */
+    gap: 20px; /* Adjusted gap for better spacing */
     width: 80%;
     margin: auto;
-    margin-top: -60px;
 }
 
 .button {
